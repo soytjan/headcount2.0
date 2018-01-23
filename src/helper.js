@@ -19,25 +19,26 @@ export default class DistrictRepository {
   }
 
   findByName(location) {
-    if (!location) {
+    if (!location || !this.data[location.toUpperCase()]) {
       return undefined;
     }
-    let place = location.toUpperCase();
-    if (this.data[place]) {
-      let roundedData = this.data[place].reduce((acc, element) => {
-        if (!acc[element.TimeFrame]) {
-          acc[element.TimeFrame] = 0;
-        }
-        if (typeof element.Data === 'number') {
-          acc[element.TimeFrame] = Number(element.Data.toFixed(3));
-        }
-        return acc;
-      }, {});
-      return {
-        location: place,
-        data: roundedData
-      };
-    }
+    
+    let roundedData = this.data[location.toUpperCase()].reduce((acc, element) => {
+      if (!acc[element.TimeFrame]) {
+        acc[element.TimeFrame] = 0;
+      }
+
+      if (typeof element.Data === 'number') {
+        acc[element.TimeFrame] = Number(element.Data.toFixed(3));
+      }
+
+      return acc;
+    }, {});
+
+    return {
+      location: location.toUpperCase(),
+      data: roundedData
+    };
   }
 
   findAllMatches(location) {
