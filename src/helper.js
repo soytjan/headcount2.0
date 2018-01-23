@@ -22,21 +22,36 @@ export default class DistrictRepository {
     if (!location) {
       return undefined;
     }
-    let place = location.toUpperCase()
+    let place = location.toUpperCase();
     if (this.data[place]) {
-      let roundedData = this.data[place].reduce((acc, element)=> {
+      let roundedData = this.data[place].reduce((acc, element) => {
         if (!acc[element.TimeFrame]) {
-          acc[element.TimeFrame] = 0
+          acc[element.TimeFrame] = 0;
         }
         if (typeof element.Data === 'number') {
-          acc[element.TimeFrame] = Number(element.Data.toFixed(3))
+          acc[element.TimeFrame] = Number(element.Data.toFixed(3));
         }
-        return acc
-      }, {})
+        return acc;
+      }, {});
       return {
         location: place,
         data: roundedData
+      };
+    }
+  }
+
+  findAllMatches(location) {
+    if (!location) {
+      return Object.keys(this.data).map(district => this.data[district]);
+    }
+    let place = location.toUpperCase();
+
+    let array = Object.keys(this.data).reduce((acc, district) => {
+      if (district.includes(place)) {
+        acc.push(this.data[district]);
       }
-    } 
+      return acc;
+    }, []);
+    return array;
   }
 }
