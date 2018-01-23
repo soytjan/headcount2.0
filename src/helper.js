@@ -1,5 +1,3 @@
-
-
 export default class DistrictRepository {
   constructor(data) {
     // data in JSON
@@ -8,13 +6,37 @@ export default class DistrictRepository {
 
   cleanData(data) {
     return data.reduce((acc, element) => {
-      if (!acc[element.Location]) {
-        acc[element.Location] = [];
+      let place = element.Location.toUpperCase();
+
+      if (!acc[place]) {
+        acc[place] = [];
       }
 
-      acc[element.Location].push(element);
+      acc[place].push(element);
 
       return acc;
-    }, [])
-  }  
+    }, {});
+  }
+
+  findByName(location) {
+    if (!location) {
+      return undefined;
+    }
+    let place = location.toUpperCase()
+    if (this.data[place]) {
+      let roundedData = this.data[place].reduce((acc, element)=> {
+        if (!acc[element.TimeFrame]) {
+          acc[element.TimeFrame] = 0
+        }
+        if (typeof element.Data === 'number') {
+          acc[element.TimeFrame] = Number(element.Data.toFixed(3))
+        }
+        return acc
+      }, {})
+      return {
+        location: place,
+        data: roundedData
+      }
+    } 
+  }
 }
