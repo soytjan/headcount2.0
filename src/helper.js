@@ -19,39 +19,37 @@ export default class DistrictRepository {
   }
 
   findByName(location) {
-    if (!location) {
+    if (!location || !this.data[location.toUpperCase()]) {
       return undefined;
     }
     
-    if (this.data[location.toUpperCase()]) {
-      let roundedData = this.data[location.toUpperCase()].reduce((acc, element) => {
-        if (!acc[element.TimeFrame]) {
-          acc[element.TimeFrame] = 0;
-        }
-        if (typeof element.Data === 'number') {
-          acc[element.TimeFrame] = Number(element.Data.toFixed(3));
-        }
-        return acc;
-      }, {});
-      return {
-        location: location.toUpperCase(),
-        data: roundedData
-      };
-    }
+    let roundedData = this.data[location.toUpperCase()].reduce((acc, element) => {
+      if (!acc[element.TimeFrame]) {
+        acc[element.TimeFrame] = 0;
+      }
+
+      if (typeof element.Data === 'number') {
+        acc[element.TimeFrame] = Number(element.Data.toFixed(3));
+      }
+
+      return acc;
+    }, {});
+
+    return {
+      location: location.toUpperCase(),
+      data: roundedData
+    };
   }
 
   findAllMatches(location) {
-    if (!location) {
-      return Object.keys(this.data).map(district => this.data[district]);
-    }
-    let place = location.toUpperCase();
-
-    let array = Object.keys(this.data).reduce((acc, district) => {
-      if (district.includes(place)) {
+    return Object.keys(this.data).reduce((acc, district) => {
+      if (!location) {
+        acc.push(this.data[district]);
+      } else if (district.includes(location.toUpperCase())) {
         acc.push(this.data[district]);
       }
+
       return acc;
     }, []);
-    return array;
   }
 }
