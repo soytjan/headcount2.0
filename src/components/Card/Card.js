@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 
 export class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: true
+    }
+  }
   render() {
     return (
       <div>
@@ -10,4 +16,4 @@ export class Card extends Component {
   }
 }
 
-export default Card
+export default Card;
