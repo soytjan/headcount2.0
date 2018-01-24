@@ -5,6 +5,7 @@ const CardContainer = ({ kinderData, findByName }) => {
   return (
     <div>
       {console.log(findByName)}
+      {console.log(kinderData)}
     </div>
   )
 }
