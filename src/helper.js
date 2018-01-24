@@ -1,16 +1,17 @@
 export default class DistrictRepository {
   constructor(data) {
-    // data in JSON
     this.data = this.cleanData(data);
   }
 
   cleanData(data) {
     return data.reduce((acc, element) => {
-      let place = element.Location.toUpperCase();
+      const place = element.Location.toUpperCase();
 
       if (!acc[place]) {
         acc[place] = [];
       }
+
+      // acc[place] ? acc[place].push(element) : acc[place] = [element];
 
       acc[place].push(element);
 
@@ -18,36 +19,38 @@ export default class DistrictRepository {
     }, {});
   }
 
+  sanitizeData(data) {
+    if (typeof data === 'number') {
+      return Number(data.toFixed(3));
+    }
+
+    return 0;
+  }
+
   findByName(location) {
     if (!location || !this.data[location.toUpperCase()]) {
       return undefined;
     }
     
-    let roundedData = this.data[location.toUpperCase()].reduce((acc, element) => {
-      if (!acc[element.TimeFrame]) {
-        acc[element.TimeFrame] = 0;
-      }
+    const sanitizedData = this.data[location.toUpperCase()].reduce((acc, element) => {
 
-      if (typeof element.Data === 'number') {
-        acc[element.TimeFrame] = Number(element.Data.toFixed(3));
-      }
+      acc[element.TimeFrame] = this.sanitizeData(element.Data);
 
       return acc;
     }, {});
 
     return {
       location: location.toUpperCase(),
-      data: roundedData
+      data: sanitizedData
     };
   }
 
   findAllMatches(location) {
     return Object.keys(this.data).reduce((acc, district) => {
-      if (!location) {
-        acc.push(this.data[district]);
-      } else if (district.includes(location.toUpperCase())) {
+      if (!location || district.includes(location.toUpperCase())) {
         acc.push(this.data[district]);
       }
+
 
       return acc;
     }, []);
