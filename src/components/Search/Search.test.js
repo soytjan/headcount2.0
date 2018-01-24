@@ -8,31 +8,35 @@ it('renders without crashing', () => {
   // ReactDOM.render(<Search />, div);
 });
 
-it('should match the snapshot', () => {
-  const renderedComponent = shallow(<Search />)
+describe('Search', () => {
+  let renderedComponent;
 
-  expect(renderedComponent).toMatchSnapshot()
-})
+  beforeEach(() => {
+    renderedComponent = shallow(<Search />)
+  })
 
-it('should start with a default location state of an empty string', () => {
-  const renderedComponent = shallow(<Search />);
+  it.skip('should match the snapshot', () => {
+    expect(renderedComponent).toMatchSnapshot()
+  })
 
-  expect(renderedComponent.state()).toEqual({ location: '' })
-})
+  it('should have an input and button', () => {
+    expect(renderedComponent.find('input').length).toEqual(1);
+    expect(renderedComponent.find('button').length).toEqual(1);
+  })
 
-it('should update location state on change', () => {
-  const renderedComponent = shallow(<Search />);
-  const mockInput = 'a';
+  it('should start with a default location state of an empty string', () => {
+    expect(renderedComponent.state()).toEqual({ location: '' })
+  })
 
-  renderedComponent.find('input').simulate('change', { target: { value: 'a' }});
+  it('should update location state on change', () => {
+    const mockInput = 'a';
 
-  expect(renderedComponent.state().location).toEqual('a');
-})
+    renderedComponent.find('input').simulate('change', { target: { value: 'a' }});
 
-it('when submitInput is called, should send data to App', () => {
-  // don't know how to mock this or if it needs to be mocked
-})
+    expect(renderedComponent.state().location).toEqual('a');
+  })
 
-it('', () => {
-  
-})
+  it.skip('when submitInput is called, should send data to App', () => {
+    // don't know how to mock this or if it needs to be mocked
+  })
+});
