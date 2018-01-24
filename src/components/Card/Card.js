@@ -1,9 +1,11 @@
 import React from 'react';
+import './Card.css';
 
 const Card = ({location, data}) => {
 
   const years = Object.keys(data).map((year)=>{
-    return (<li>{year}: {data[year]}</li>)
+    let style = data[year]>=.5? 'high':'low'
+    return (<li className={style} >{year}: {data[year]}</li>)
   })
   
   return (

@@ -9,11 +9,22 @@ export class Search extends Component {
     }
   }
 
+  handleInputChange = (e) => {
+    const { value } = e.target;
+
+    this.setState({ location: value })
+  }
+
   render() {
     return (
       <div className='Search'>
-        <input type='text' placeholder='Search'/>
+      <form>  
+        <input
+          onChange={this.handleInputChange} 
+          type='text' 
+          placeholder='Search'/>
         <button>Search</button>
+      </form>
       </div>
     )
   }
