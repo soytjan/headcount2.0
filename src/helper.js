@@ -51,8 +51,6 @@ export default class DistrictRepository {
 
       return acc;
     }, []);
-
-    console.log(array)
     return array
   }
 }
