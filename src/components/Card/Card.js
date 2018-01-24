@@ -10,10 +10,10 @@ const Card = ({location, data}) => {
   
   return (
     <div>
-      <h1>{location}</h1>
+      <h3>{location}</h3>
       <ul>{years}</ul>
     </div>
   )
 }
 
-export default Card
+export default Card;
