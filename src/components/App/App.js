@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import DistrictRepository from '../../helper.js';
-import kinderData from '../../../data/kindergartners_in_full_day_program.js';
+import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
 class App extends Component {
   constructor(props) {
