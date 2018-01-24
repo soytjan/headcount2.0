@@ -46,13 +46,16 @@ export default class DistrictRepository {
   }
 
   findAllMatches(location) {
-    return Object.keys(this.data).reduce((acc, district) => {
+    let array = Object.keys(this.data).reduce((acc, district) => {
       if (!location || district.includes(location.toUpperCase())) {
-        acc.push(this.data[district]);
+        acc.push(this.findByName(district))
       }
 
       return acc;
     }, []);
+    console.log(array);
+
     return array
+
   }
 }
