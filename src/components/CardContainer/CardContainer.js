@@ -1,8 +1,11 @@
 import React from 'react'
 
-const CardContainer = () => {
-  return (
+const CardContainer = ({ kinderData, findByName }) => {
 
+  return (
+    <div>
+      {console.log(findByName)}
+    </div>
   )
 }
 
