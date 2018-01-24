@@ -10,23 +10,23 @@ it('renders without crashing', () => {
 
 describe('Card', () => {
   it.skip('should match the snapshot', () => {
+    const mockData = {location: 'Colorado', data: {'2004': 0.302}}
+    const renderedComponent = shallow(<Card {...mockData} />);
+    
     expect(renderedComponent).toMatchSnapshot()
   })
 
-  it('should start with a default selected state of false', () => {
-    const renderedComponent = shallow(<Card />);
-    expect(renderedComponent.state()).toEqual({ selected: false });
-  })
-
   it('should have a class of low if data is below 0.5', () => {
-    
+    const mockData = {location: 'Colorado', data: {'2004': 0.302}}
+    const renderedComponent = shallow(<Card {...mockData} />);
+
+    expect(renderedComponent.find('li').hasClass('low')).toEqual(true);
   })
 
   it('should have a class of high if data is above 0.5', () => {
-    
-  })
+    const mockData = {location: 'Colorado', data: {'2004': 0.605}}
+    const renderedComponent = shallow(<Card {...mockData} />);
 
-  it('should change state to reflect when a card is selected', () => {
-    
+    expect(renderedComponent.find('li').hasClass('high')).toEqual(true);
   })
 })

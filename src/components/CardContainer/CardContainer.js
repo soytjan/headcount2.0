@@ -3,7 +3,8 @@ import Card from '../Card/Card.js';
 import './CardContainer.css';
 
 const CardContainer = ({ Data }) => {
-  const cards = Data.map((elem)=>(
+  console.log(Data)
+  const cards = Data.map((elem, index)=>(
 
     <Card {...elem} />
 
