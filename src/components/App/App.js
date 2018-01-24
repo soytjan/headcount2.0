@@ -17,7 +17,7 @@ class App extends Component {
         Welcome To Headcount 2.0
         <CardContainer
           kinderData={kinderData}
-          findByName={DistrictRepository.findByName}
+          findByName={this.district.findByName}
         />
       </div>
     );
