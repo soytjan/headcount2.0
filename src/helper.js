@@ -22,9 +22,9 @@ export default class DistrictRepository {
     if (!location) {
       return undefined;
     }
-    let place = location.toUpperCase();
-    if (this.data[place]) {
-      let roundedData = this.data[place].reduce((acc, element) => {
+    
+    if (this.data[location.toUpperCase()]) {
+      let roundedData = this.data[location.toUpperCase()].reduce((acc, element) => {
         if (!acc[element.TimeFrame]) {
           acc[element.TimeFrame] = 0;
         }
@@ -34,7 +34,7 @@ export default class DistrictRepository {
         return acc;
       }, {});
       return {
-        location: place,
+        location: location.toUpperCase(),
         data: roundedData
       };
     }
