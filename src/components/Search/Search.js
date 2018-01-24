@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './Search.css';
 
 export class Search extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export class Search extends Component {
 
   render() {
     return (
-      <div className='Search'>
+      <div className='search'>
       <form>  
         <input
           onChange={this.handleInputChange} 

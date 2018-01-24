@@ -1,0 +1,4 @@
+.compare-container {
+  grid-column: 1/7;
+  background-color: grey;
+  height: 100px; }

@@ -1,11 +1,8 @@
-import React from 'react'
+import React from 'react';
+import './CompareContainer.css';
 
 const CompareContainer = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <div className="compare-container">COMPARE SECTION</div>;
 }
 
 export default CompareContainer;
