@@ -51,8 +51,8 @@ export default class DistrictRepository {
         acc.push(this.data[district]);
       }
 
-
       return acc;
     }, []);
+    return array
   }
 }
