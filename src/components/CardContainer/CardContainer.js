@@ -1,10 +1,10 @@
 import React from 'react'
 
-const CardContainer = ({ kinderData, findByName }) => {
+const CardContainer = ({ Data }) => {
 
   return (
     <div>
-      {console.log(findByName())}
+      {console.log(Data)}
     </div>
   )
 }

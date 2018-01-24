@@ -16,8 +16,7 @@ class App extends Component {
       <div>
         Welcome To Headcount 2.0
         <CardContainer
-          kinderData={kinderData}
-          findByName={this.district.findByName}
+          Data={this.district.findAllMatches()}
         />
       </div>
     );
