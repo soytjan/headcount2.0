@@ -1,19 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react';
 
-export class Card extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selected: true
-    }
-  }
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+const Card = ({location, data}) => {
+
+  const years = Object.keys(data).map((year)=>{
+    return (<li>{year}: {data[year]}</li>)
+  })
+  
+  return (
+    <div>
+      <h1>{location}</h1>
+      <ul>{years}</ul>
+    </div>
+  )
 }
 
-export default Card;
+export default Card

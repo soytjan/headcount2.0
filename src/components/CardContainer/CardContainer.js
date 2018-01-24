@@ -1,10 +1,17 @@
-import React from 'react'
+import React from 'react';
+import Card from '../Card/Card.js';
 
 const CardContainer = ({ Data }) => {
+  const cards = Data.map((elem)=>(
+
+    <Card {...elem} />
+
+  ))
+
 
   return (
     <div>
-      {console.log(Data)}
+      {cards}
     </div>
   )
 }
