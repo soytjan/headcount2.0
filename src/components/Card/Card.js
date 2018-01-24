@@ -16,10 +16,6 @@ const Card = ({location, data}) => {
   )
 }
 
-<<<<<<< HEAD
-export default Card;
-=======
 // add in PropTypes
 
 export default Card
->>>>>>> bcae1c46f94321f4f06d1a119b4a2112f5c2d6a6
