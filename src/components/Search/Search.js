@@ -13,18 +13,26 @@ export class Search extends Component {
   handleInputChange = (e) => {
     const { value } = e.target;
 
+    // should we be setting state? is it necessary?
     this.setState({ location: value })
+
+    this.props.handleSearch(value.toUpperCase());
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
   }
 
   render() {
     return (
       <div className='search'>
-      <form>  
+      <form onSubmit={this.handleSubmit}>  
         <input
-          onChange={this.handleInputChange} 
+          onChange={this.handleInputChange}
+          value={this.state.location} 
           type='text' 
           placeholder='Search'/>
-        <button>Search</button>
+        <button onClick={() => this.props.handleSearch()}>Refresh</button>
       </form>
       </div>
     )
