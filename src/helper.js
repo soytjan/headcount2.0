@@ -53,6 +53,13 @@ export default class DistrictRepository {
 
       return acc;
     }, []);
+  }
 
+  findAverage(location) {
+    const locationData = this.findByName(location);
+    const yearValues = Object.values(locationData.districtData);
+    const total = yearValues.reduce((sum, value) => sum += value, 0)
+
+    return Number((total / yearValues.length).toFixed(3));
   }
 }
