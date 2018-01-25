@@ -10,17 +10,19 @@ export class Search extends Component {
     }
   }
 
+  // shouldComponentUpdate() ?? 
+
   handleInputChange = (e) => {
     const { value } = e.target;
 
-    // should we be setting state? is it necessary?
-    this.setState({ location: value })
-
+    this.setState({ location: value });
     this.props.handleSearch(value.toUpperCase());
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
+
+    console.log('submit')
   }
 
   render() {
@@ -32,7 +34,7 @@ export class Search extends Component {
           value={this.state.location} 
           type='text' 
           placeholder='Search'/>
-        <button onClick={() => this.props.handleSearch()}>Refresh</button>
+        <button onClick={() => this.props.handleSearch()}>Show All</button>
       </form>
       </div>
     )
