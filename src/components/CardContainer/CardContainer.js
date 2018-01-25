@@ -5,7 +5,7 @@ import './CardContainer.css';
 const CardContainer = ({ districtData }) => {
   const cards = districtData.map((elem, index)=>(
 
-    <Card {...elem} key={index} />
+    <Card {...elem} key={`card-${index}${Date.now()}`} />
 
   ))
 
