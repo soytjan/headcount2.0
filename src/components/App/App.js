@@ -8,7 +8,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.district = new DistrictRepository(kinderData);
+    this.data = this.district.findAllMatches();
     this.state = {};
+  }
+
+  handleSearch = (input) => {
+    const data = this.district.findAllMatches(input);
+
+    this.setState({ data });
   }
 
   render() {
@@ -16,7 +23,7 @@ class App extends Component {
       <div>
         Welcome To Headcount 2.0
         <CardContainer
-          Data={this.district.findAllMatches()}
+          data={this.data}
         />
       </div>
     );
