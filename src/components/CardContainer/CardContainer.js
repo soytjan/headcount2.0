@@ -2,11 +2,10 @@ import React from 'react';
 import Card from '../Card/Card.js';
 import './CardContainer.css';
 
-const CardContainer = ({ data }) => {
-  console.log(data)
-  const cards = data.map((elem, index)=>(
+const CardContainer = ({ districtData }) => {
+  const cards = districtData.map((elem, index)=>(
 
-    <Card {...elem} />
+    <Card {...elem} key={index} />
 
   ))
 

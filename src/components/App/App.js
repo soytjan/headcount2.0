@@ -30,7 +30,7 @@ class App extends Component {
         <Header />
         <Search handleSearch={this.handleSearch} />
         <CompareContainer />
-        <CardContainer data={this.state.data} />
+        <CardContainer districtData={this.state.data} />
         <Footer />
       </div>
     );
