@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card.js';
+import './CardContainer.css';
 
 const CardContainer = ({ data }) => {
   console.log(data)
@@ -11,7 +12,7 @@ const CardContainer = ({ data }) => {
 
 
   return (
-    <div>
+    <div className='card-container'>
       {cards}
     </div>
   )

@@ -1,30 +1,37 @@
-import React, { Component } from 'react';
-import './App.scss';
-import DistrictRepository from '../../helper.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import CompareContainer from '../CompareContainer/CompareContainer.js';
 import CardContainer from '../CardContainer/CardContainer.js';
+import DistrictRepository from '../../helper.js';
+import React, { Component } from 'react';
+import Footer from '../Footer/Footer.js';
+import Search from '../Search/Search.js';
+import Header from '../Header/Header.js';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.district = new DistrictRepository(kinderData);
-    this.data = this.district.findAllMatches();
-    this.state = {};
+    
+    this.state = {
+      data: this.district.findAllMatches(),
+    };
   }
 
   handleSearch = (input) => {
     const data = this.district.findAllMatches(input);
-
+    console.log('input', input)
     this.setState({ data });
   }
 
   render() {
     return (
-      <div>
-        Welcome To Headcount 2.0
-        <CardContainer
-          data={this.data}
-        />
+      <div className="wrapper">
+        <Header />
+        <Search handleSearch={this.handleSearch} />
+        <CompareContainer />
+        <CardContainer data={this.state.data} />
+        <Footer />
       </div>
     );
   }

@@ -9,8 +9,8 @@ const Card = ({location, data}) => {
   })
   
   return (
-    <div>
-      <h1>{location}</h1>
+    <div className='card' >
+      <h3>{location}</h3>
       <ul>{years}</ul>
     </div>
   )

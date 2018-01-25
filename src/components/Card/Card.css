@@ -1,5 +1,17 @@
+.card {
+  border: 1px solid black;
+  border-radius: 50px;
+  text-align: center;
+  padding: 20px 0px; }
+
+h3 {
+  font-size: 1.2em; }
+
+ul {
+  margin-top: 10px; }
+
+li {
+  list-style: none; }
+
 .high {
   color: magenta; }
-
-.low {
-  color: peru; }
