@@ -1,6 +1,6 @@
 .card-container {
   grid-column: 1/7;
-  background-color: darkblue;
   display: grid;
-  grid-template-columns: repeat(6, 1fr)
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
 }
