@@ -12,16 +12,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.district = new DistrictRepository(kinderData);
-    this.state = {};
+    
+    this.state = {
+      data: this.district.findAllMatches(),
+    };
+  }
+
+  handleSearch = (input) => {
+    const data = this.district.findAllMatches(input);
+    console.log('input', input)
+    this.setState({ data });
   }
 
   render() {
     return (
       <div className="wrapper">
         <Header />
-        <Search />
+        <Search handleSearch={this.handleSearch} />
         <CompareContainer />
-        <CardContainer Data={this.district.findAllMatches()} />
+        <CardContainer districtData={this.state.data} />
         <Footer />
       </div>
     );

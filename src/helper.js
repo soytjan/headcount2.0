@@ -41,7 +41,7 @@ export default class DistrictRepository {
 
     return {
       location: location.toUpperCase(),
-      data: sanitizedData
+      districtData: sanitizedData
     };
   }
 
