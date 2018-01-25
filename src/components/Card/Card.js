@@ -3,9 +3,9 @@ import './Card.css';
 
 const Card = ({location, data}) => {
 
-  const years = Object.keys(data).map((year)=>{
+  const years = Object.keys(data).map((year, index)=>{
     let style = data[year] >= .5 ? 'high':'low';
-    return (<li className={style}> {year}: {data[year]}</li>)
+    return (<li className={style} key={index}> {year}: {data[year]}</li>)
   })
   
   return (

@@ -3,10 +3,9 @@ import Card from '../Card/Card.js';
 import './CardContainer.css';
 
 const CardContainer = ({ Data }) => {
-  console.log(Data)
   const cards = Data.map((elem, index)=>(
 
-    <Card {...elem} />
+    <Card {...elem} key={index}/>
 
   ))
 
