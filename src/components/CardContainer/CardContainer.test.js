@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CardContainer from './CardContainer';
 import { shallow, mount } from 'enzyme';
+import DistrictRepository from '../../helper.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
 describe('CardContainer', () => {
@@ -9,15 +10,13 @@ describe('CardContainer', () => {
     expect(renderedComponent).toMatchSnapshot()
   })
 
-  it('should render cards for all data passed in', () => {
-    const renderedComponent = shallow(<CardContainer />);
+  it('should render cards for data passed in', () => {
+    const district = new DistrictRepository(kinderData);
+    const mockData = district.findAllMatches();
+    const renderedComponent = shallow(<CardContainer districtData={mockData} />);
 
     expect(renderedComponent.find('Card').length).toEqual(181);
   })
 
-  it('should mount cards for all data passed in', () => {
-    // const renderedComponent = mount(<CardContainer />);
-
-    // expect(renderedComponent.)
-  })
+  // test for className of card-container
 })
