@@ -15,6 +15,7 @@ class App extends Component {
     
     this.state = {
       data: this.district.findAllMatches(),
+      comparedCards: []
     };
   }
 
@@ -24,13 +25,17 @@ class App extends Component {
     this.setState({ data });
   }
 
+  handleSelect = (location) => {
+    this.setState({comparedCards: [...this.state.comparedCards, this.district.findByName(location)]});
+  }
+
   render() {
     return (
       <div className="wrapper">
         <Header />
         <Search handleSearch={this.handleSearch} />
-        <CompareContainer />
-        <CardContainer districtData={this.state.data} />
+        <CompareContainer comparedCards={this.state.comparedCards} />
+        <CardContainer districtData={this.state.data} select={this.handleSelect} />
         <Footer />
       </div>
     );
