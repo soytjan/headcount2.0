@@ -15,6 +15,7 @@ class App extends Component {
     
     this.state = {
       data: this.district.findAllMatches(),
+      comparedCards: []
     };
   }
 
@@ -29,7 +30,7 @@ class App extends Component {
       <div className="wrapper">
         <Header />
         <Search handleSearch={this.handleSearch} />
-        <CompareContainer />
+        <CompareContainer comparedCards={this.state.comparedCards} />
         <CardContainer districtData={this.state.data} />
         <Footer />
       </div>
