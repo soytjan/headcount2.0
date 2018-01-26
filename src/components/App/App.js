@@ -26,7 +26,9 @@ class App extends Component {
   }
 
   handleSelect = (location) => {
-    this.setState({comparedCards: [...this.state.comparedCards, this.district.findByName(location)]});
+    if (this.state.comparedCards.length < 2) {
+      this.setState({comparedCards: [...this.state.comparedCards, this.district.findByName(location)]});
+    }
   }
 
   render() {
