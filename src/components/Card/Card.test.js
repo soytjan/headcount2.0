@@ -25,4 +25,9 @@ describe('Card', () => {
 
     expect(renderedComponent.find('li').hasClass('high')).toEqual(true);
   })
+
+  // 1. test that checks for location and years (pass in mockData and check for it)
+  // 2. test that checks for the conditional rendering that we are going to do with the compare cards
+  // 3. test that checks to see if the class changes when it is selected or whatever we are going to do 
+
 })
