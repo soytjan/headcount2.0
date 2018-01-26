@@ -12,22 +12,36 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.district = new DistrictRepository(kinderData);
-    
+
     this.state = {
       data: this.district.findAllMatches(),
       comparedCards: []
     };
   }
 
-  handleSearch = (input) => {
+  handleSearch = input => {
     const data = this.district.findAllMatches(input);
-    console.log(data)
+    console.log(data);
     this.setState({ data });
-  }
+  };
 
-  handleSelect = (location) => {
-    this.setState({comparedCards: [...this.state.comparedCards, this.district.findByName(location)]});
-  }
+  handleSelect = location => {
+    if (this.state.comparedCards.length < 2) {
+      this.setState({
+        comparedCards: [
+          ...this.state.comparedCards,
+          this.district.findByName(location)
+        ]
+      });
+    } else {
+      this.setState({
+        comparedCards: [
+          ...this.state.comparedCards.splice(1),
+          this.district.findByName(location)
+        ]
+      });
+    }
+  };
 
   render() {
     return (
@@ -35,7 +49,10 @@ class App extends Component {
         <Header />
         <Search handleSearch={this.handleSearch} />
         <CompareContainer comparedCards={this.state.comparedCards} />
-        <CardContainer districtData={this.state.data} select={this.handleSelect} />
+        <CardContainer
+          districtData={this.state.data}
+          select={this.handleSelect}
+        />
         <Footer />
       </div>
     );

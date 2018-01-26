@@ -6,9 +6,14 @@ const Card = ({location, districtData, select, id}) => {
     let style = districtData[year] >= .5 ? 'high':'low';
     return (<li className={style} key={`year-${index}`}> {year}: {districtData[year]}</li>)
   })
+
+  const handleCardClick = () => {
+    select(location);
+    
+  }
   
   return (
-    <div id={id} className='card' onClick={() => select(location)}>
+    <div id={id} className='card' onClick={handleCardClick}>
       <h3>{location}</h3>
       <ul>{years}</ul>
     </div>

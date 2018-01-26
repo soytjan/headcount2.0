@@ -1,5 +1,9 @@
 .compare-container {
   grid-column: 1/7;
-  background-color: grey;
-  height: 100px;
-  margin: 0 2%; }
+  margin: 0 2%;
+  display: flex;
+  justify-content: center; }
+
+.compare-container .card {
+  width: 200px;
+  margin: 10px; }
