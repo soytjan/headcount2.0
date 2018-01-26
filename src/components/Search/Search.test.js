@@ -18,11 +18,11 @@ describe('Search', () => {
   it('should have an input and button', () => {
     expect(renderedComponent.find('input').length).toEqual(1);
     expect(renderedComponent.find('button').length).toEqual(1);
-  })
+  });
 
   it('should start with a default location state of an empty string', () => {
     expect(renderedComponent.state()).toEqual({ location: '' })
-  })
+  });
 
   it('should update location state on change and call method passed down from props', () => {
     const mockSubmit = jest.fn();
@@ -32,5 +32,5 @@ describe('Search', () => {
 
     expect(renderedComponent.state().location).toEqual('a');
     expect(mockSubmit.mock.calls.length).toBe(1);
-  })
+  });
 });

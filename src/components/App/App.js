@@ -20,7 +20,7 @@ class App extends Component {
 
   handleSearch = (input) => {
     const data = this.district.findAllMatches(input);
-  
+    console.log(data)
     this.setState({ data });
   }
 
