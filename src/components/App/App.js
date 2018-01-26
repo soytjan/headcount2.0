@@ -14,15 +14,14 @@ class App extends Component {
     this.district = new DistrictRepository(kinderData);
 
     this.state = {
-      data: this.district.findAllMatches(),
+      districtData: this.district.findAllMatches(),
       comparedCards: []
     };
   }
 
   handleSearch = input => {
-    const data = this.district.findAllMatches(input);
-    console.log(data);
-    this.setState({ data });
+    const districtData = this.district.findAllMatches(input);
+    this.setState({ districtData });
   };
 
   handleSelect = location => {
@@ -50,7 +49,7 @@ class App extends Component {
         <Search handleSearch={this.handleSearch} />
         <CompareContainer comparedCards={this.state.comparedCards} />
         <CardContainer
-          districtData={this.state.data}
+          districtData={this.state.districtData}
           select={this.handleSelect}
         />
         <Footer />
