@@ -1,8 +1,8 @@
 import React from 'react';
 import './Card.css';
 import PropTypes from 'prop-types';
-
-const Card = ({ location, districtData, select, id }) => {
+                                                        
+const Card = ({ location, districtData, select, id, klassName }) => {
   const years = Object.keys(districtData).map((year, index) => {
     let style = districtData[year] >= 0.5 ? 'high' : 'low';
     return (
@@ -16,9 +16,9 @@ const Card = ({ location, districtData, select, id }) => {
   const handleCardClick = () => {
     select(location);
   };
-
-  return (
-    <div id={id} className="card" onClick={handleCardClick}>
+  console.log(klassName)
+  return (                 // selected-card ....... ""
+    <div id={id} className={klassName} onClick={handleCardClick}>
       <h3>{location}</h3>
       <ul>{years}</ul>
     </div>
@@ -27,6 +27,7 @@ const Card = ({ location, districtData, select, id }) => {
 
 Card.propTypes = {
   location: PropTypes.string,
+  klassName: PropTypes.string,
   districtData: PropTypes.object,
   select: PropTypes.func,
   id: PropTypes.string
