@@ -1,13 +1,12 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card.js';
 import './CardContainer.css';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 const CardContainer = ({ districtData, select, compare }) => {
   const cards = districtData.map((districtObject, index) => {
-    if (districtObject.selected === 'selected') {
-      districtObject.selected = 'not-selected';
-    }
+    districtObject.selected = 'not-selected';
+
     compare.forEach(compareObject => {
       if (compareObject.location === districtObject.location) {
         districtObject.selected = 'selected';

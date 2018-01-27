@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import './Card.css';
-import PropTypes from 'prop-types';
 
 const Card = ({ location, districtData, select, id, selected}) => {
   const years = Object.keys(districtData).map((year, index) => {
@@ -16,7 +16,6 @@ const Card = ({ location, districtData, select, id, selected}) => {
   const handleCardClick = () => {
     select(location);
   };
-console.log(selected);
 
   return (
     <div id={id} className={['card', selected].join(' ')} onClick={handleCardClick}>
