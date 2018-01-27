@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const CompareContainer = ({comparedCards}) => {
   const selectedCards = comparedCards.map((card, index) => (
-    <Card {...card} key={`card-${index}${Date.now()}`} />
+    <Card {...card} key={`card-${index}${Date.now()}`} selected='selected' />
   ));
   return (
     <div className="compare-container">

@@ -15,3 +15,6 @@ li {
 
 .high {
   color: magenta; }
+
+.selected {
+  background-color: grey; }
