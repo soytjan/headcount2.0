@@ -25,21 +25,14 @@ class App extends Component {
   };
 
   handleSelect = location => {
-    if (this.state.comparedCards.length < 2) {
-      this.setState({
-        comparedCards: [
-          ...this.state.comparedCards,
-          this.district.findByName(location)
-        ]
-      });
+    let { comparedCards } = this.state;
+    let cards;
+    if (comparedCards.length < 2) {
+      cards = [...comparedCards, this.district.findByName(location)];
     } else {
-      this.setState({
-        comparedCards: [
-          ...this.state.comparedCards.splice(1),
-          this.district.findByName(location)
-        ]
-      });
+      cards = [...comparedCards.splice(1), this.district.findByName(location)];
     }
+    this.setState({ comparedCards: cards });
   };
 
   render() {
