@@ -44,6 +44,7 @@ class App extends Component {
         <CardContainer
           districtData={this.state.districtData}
           select={this.handleSelect}
+          compare={this.state.comparedCards}
         />
         <Footer />
       </div>
