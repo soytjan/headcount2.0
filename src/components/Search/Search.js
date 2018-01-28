@@ -24,6 +24,7 @@ export class Search extends Component {
   };
 
   handleClick = () => {
+    console.log('button click')
     this.setState({ location: '' });
     this.props.handleDistrictSearch();
   }
@@ -38,8 +39,8 @@ export class Search extends Component {
             type="text"
             placeholder="Search districts"
           />
-          <button onClick={this.handleClick}>Show All Districts</button>
         </form>
+        <button onClick={this.handleClick}>Show All Districts</button>
       </div>
     );
   }

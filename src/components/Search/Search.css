@@ -1,5 +1,8 @@
 .search {
-  grid-column: 1/7; }
+  grid-column: 1/7;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
   .search button {
     background-color: #F7C74A;
     color: #273B7A;
@@ -10,6 +13,8 @@
     padding: 0 12px;
     border: none;
     margin-bottom: 25px; }
+    .search button:hover {
+      background-color: #CBA33D; }
   .search input {
     font-family: "Lato", sans-serif;
     font-size: 1.2em;
@@ -19,8 +24,3 @@
     width: 400px;
     height: 40px;
     margin: 25px 0 15px; }
-
-.search-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
