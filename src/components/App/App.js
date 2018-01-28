@@ -24,9 +24,25 @@ class App extends Component {
     this.setState({ districtData });
   };
 
-  handleSelect = location => {
+  handleSelect = (location, id, isSelected) => {
+    if (isSelected) {
+      console.log('unselecting')
+      this.unselectDistrict(location);
+    } else {
+      this.selectDistrict(location);
+    }  
+  };
+
+  unselectDistrict = location => {
+    const selectedDistricts = this.state.selectedDistricts.filter(district => location !== district.location && district.districtData);
+
+    this.setState({ selectedDistricts });
+  };
+
+  selectDistrict = location => {
     let { selectedDistricts } = this.state;
     let cards;
+
     if (selectedDistricts.length < 2) {
       cards = [...selectedDistricts, this.district.findByName(location)];
     } else {
@@ -40,7 +56,7 @@ class App extends Component {
     const location1 = this.state.selectedDistricts[0].location;
     const location2 = this.state.selectedDistricts[1].location;
     return this.district.compareDistrictAverages(location1, location2);
-  }
+  };
 
   render() {
     return (
@@ -49,7 +65,9 @@ class App extends Component {
         <Search handleSearch={this.handleSearch} />
         <CompareContainer 
           selectedDistricts={this.state.selectedDistricts}
-          onComparison={this.handleComparison} />
+          onSelect={this.handleSelect}
+          onComparison={this.handleComparison}
+        />
         <CardContainer
           districtData={this.state.districtData}
           onSelect={this.handleSelect}

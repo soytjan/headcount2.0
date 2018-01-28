@@ -3,7 +3,7 @@ import './CompareContainer.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
-const CompareContainer = ({selectedDistricts, onComparison}) => {
+const CompareContainer = ({selectedDistricts, onComparison, onSelect}) => {
   let districtArray = selectedDistricts;
 
   if (selectedDistricts.length > 1) {
@@ -12,7 +12,12 @@ const CompareContainer = ({selectedDistricts, onComparison}) => {
   }
 
   const selectedCards = districtArray.map((card, index) => (
-    <Card {...card} key={`card-${index}${Date.now()}`} id={`card-${index}${Date.now()}`} isSelected={true}/>
+    <Card {...card} 
+      key={`card-${index}${Date.now()}`} 
+      id={`card-${index}${Date.now()}`} 
+      isSelected={true} 
+      onSelect={onSelect} 
+    />
   ));
 
   return (

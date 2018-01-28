@@ -11,8 +11,6 @@ export class Search extends Component {
     };
   }
 
-  // shouldComponentUpdate() ??
-
   handleInputChange = event => {
     const { value } = event.target;
 
