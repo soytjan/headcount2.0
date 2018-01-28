@@ -51,7 +51,7 @@ class App extends Component {
     this.setState({ selectedDistricts: cards });
   };
 
-  handleComparison = () => {  
+  handleDistrictComparison = () => {  
     const location1 = this.state.selectedDistricts[0].location;
     const location2 = this.state.selectedDistricts[1].location;
     return this.district.compareDistrictAverages(location1, location2);
@@ -65,7 +65,7 @@ class App extends Component {
         <CompareContainer 
           selectedDistricts={this.state.selectedDistricts}
           onSelect={this.handleDistrictSelect}
-          onComparison={this.handleComparison}
+          onComparison={this.handleDistrictComparison}
         />
         <CardContainer
           districtData={this.state.districtData}

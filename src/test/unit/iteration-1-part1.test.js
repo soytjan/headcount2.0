@@ -26,7 +26,7 @@ describe('DistrictRepository iteration 1 - part 1', () => {
     const academy = district.findByName('ACADEmY 20');
 
     expect(academy.location).toEqual('ACADEMY 20');
-    expect(typeof academy.data).toBe('object');
+    expect(typeof academy.districtData).toBe('object');
   });
 
   test('district data is rounded to the nearest thousandth', () => {
@@ -45,7 +45,7 @@ describe('DistrictRepository iteration 1 - part 1', () => {
     };
     const academy = district.findByName('ACADEmY 20');
 
-    expect(academy.data).toEqual(result);
+    expect(academy.districtData).toEqual(result);
   });
 
   test('district data is sanitized and defaults to 0', () => {
@@ -64,6 +64,6 @@ describe('DistrictRepository iteration 1 - part 1', () => {
       '2014': 1
     };
 
-    expect(academy.data).toEqual(result);
+    expect(academy.districtData).toEqual(result);
   });
 });
