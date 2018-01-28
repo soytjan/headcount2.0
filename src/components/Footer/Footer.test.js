@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Footer from './Footer';
+import { shallow, mount } from 'enzyme';
 
 describe('Footer', () => {
   let renderedComponent;
