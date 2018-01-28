@@ -28,7 +28,7 @@ const Card = (props) => {
     const districtNames = Object.keys(props);
 
     renderedCard = (
-      <div className={klass}>
+      <div className='card compare'>
       <h3>{districtNames[1]}</h3>
       <h4>-- {props.compared} --</h4>
       <h3>{districtNames[2]}</h3>
