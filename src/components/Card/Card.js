@@ -20,10 +20,12 @@ const Card = (props) => {
     });
     
     renderedCard = 
-      (<div id={id} className={klass} onClick={() => {onSelect(location, id, isSelected)}}>
-        <h3>{location}</h3>
-        <ul>{years}</ul>
-      </div>)
+      (
+        <div id={id} className={klass} onClick={() => {onSelect(location, id, isSelected)}}>
+          <h3>{location}</h3>
+          <ul>{years}</ul>
+        </div>
+      )
   } else {
     const districtNames = Object.keys(props);
 

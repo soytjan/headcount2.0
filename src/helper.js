@@ -29,13 +29,15 @@ export default class DistrictRepository {
     if (!location || !this.data[location.toUpperCase()]) {
       return undefined;
     }
-    
-    const sanitizedData = this.data[location.toUpperCase()].reduce((acc, element) => {
 
-      acc[element.TimeFrame] = this.sanitizeData(element.Data);
+    const sanitizedData = this.data[location.toUpperCase()].reduce(
+      (acc, element) => {
+        acc[element.TimeFrame] = this.sanitizeData(element.Data);
 
-      return acc;
-    }, {});
+        return acc;
+      },
+      {}
+    );
 
     return {
       location: location.toUpperCase(),
@@ -46,7 +48,7 @@ export default class DistrictRepository {
   findAllMatches(location) {
     return Object.keys(this.data).reduce((acc, district) => {
       if (!location || district.includes(location.toUpperCase())) {
-        acc.push(this.findByName(district))
+        acc.push(this.findByName(district));
       }
 
       return acc;
@@ -67,7 +69,7 @@ export default class DistrictRepository {
     const upper1 = location1.toUpperCase();
     const upper2 = location2.toUpperCase();
     return {
-      compared: Number((district1/district2).toFixed(3)),
+      compared: Number((district1 / district2).toFixed(3)),
       [upper1]: district1,
       [upper2]: district2
     };

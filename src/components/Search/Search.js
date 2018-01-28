@@ -15,17 +15,17 @@ export class Search extends Component {
     const { value } = event.target;
 
     this.setState({ location: value });
-    this.props.handleSearch(value.toUpperCase());
+    this.props.handleDistrictSearch(value.toUpperCase());
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.handleSearch(this.state.location.toUpperCase());
+    this.props.handleDistrictSearch(this.state.location.toUpperCase());
   };
 
   handleClick = () => {
     this.setState({ location: '' });
-    this.props.handleSearch();
+    this.props.handleDistrictSearch();
   }
 
   render() {
@@ -46,7 +46,7 @@ export class Search extends Component {
 }
 
 Search.propTypes = {
-  handleSearch: PropTypes.func
+  handleDistrictSearch: PropTypes.func
 };
 
 export default Search;

@@ -23,24 +23,25 @@ describe('App', () => {
     expect(renderedComponent.state().districtData).toEqual(mockData);
   });
 
-  it('user can search through districts and handleSearch filters cards displayed on screen', () => {
+  it('user can search through districts and handleDistrictSearch filters cards displayed on screen', () => {
     const renderedComponent = mount(<App />);
     const result = [
       {
-        location: 'ACADEMY 20',
         districtData: {
-          2004: 0.302,
-          2005: 0.267,
-          2006: 0.354,
-          2007: 0.392,
-          2008: 0.385,
-          2009: 0.39,
-          2010: 0.436,
-          2011: 0.489,
-          2012: 0.479,
-          2013: 0.488,
-          2014: 0.49
-        }
+          '2004': 0.302,
+          '2005': 0.267,
+          '2006': 0.354,
+          '2007': 0.392,
+          '2008': 0.385,
+          '2009': 0.39,
+          '2010': 0.436,
+          '2011': 0.489,
+          '2012': 0.479,
+          '2013': 0.488,
+          '2014': 0.49
+        },
+        isSelected: false,
+        location: 'ACADEMY 20'
       }
     ];
 
