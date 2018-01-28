@@ -23,7 +23,7 @@ describe('App', () => {
     expect(renderedComponent.state().districtData).toEqual(mockData);
   });
 
-  it('user can search through districts and handleSearch filters cards displayed on screen', () => {
+  it('user can search through districts and handleDistrictSearch filters cards displayed on screen', () => {
     const renderedComponent = mount(<App />);
     const result = [
       {

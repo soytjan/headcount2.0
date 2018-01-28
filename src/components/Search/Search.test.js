@@ -26,7 +26,7 @@ describe('Search', () => {
 
   it('should update location state on change and call method passed down from props', () => {
     const mockSubmit = jest.fn();
-    const renderedComponent = shallow(<Search handleSearch={mockSubmit} />);
+    const renderedComponent = shallow(<Search handleDistrictSearch={mockSubmit} />);
 
     renderedComponent
       .find('input')

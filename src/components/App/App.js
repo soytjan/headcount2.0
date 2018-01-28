@@ -19,12 +19,12 @@ class App extends Component {
     };
   }
 
-  handleSearch = input => {
+  handleDistrictSearch = input => {
     const districtData = this.district.findAllMatches(input);
     this.setState({ districtData });
   };
 
-  handleSelect = (location, id, isSelected) => {
+  handleDistrictSelect = (location, id, isSelected) => {
     if (isSelected) {
       this.unselectDistrict(location);
     } else {
@@ -61,15 +61,15 @@ class App extends Component {
     return (
       <div className="wrapper">
         <Header />
-        <Search handleSearch={this.handleSearch} />
+        <Search handleDistrictSearch={this.handleDistrictSearch} />
         <CompareContainer 
           selectedDistricts={this.state.selectedDistricts}
-          onSelect={this.handleSelect}
+          onSelect={this.handleDistrictSelect}
           onComparison={this.handleComparison}
         />
         <CardContainer
           districtData={this.state.districtData}
-          onSelect={this.handleSelect}
+          onSelect={this.handleDistrictSelect}
           selectedDistricts={this.state.selectedDistricts}
         />
         <Footer />

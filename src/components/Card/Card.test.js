@@ -24,8 +24,6 @@ describe('Card', () => {
     expect(renderedComponent.find('li').hasClass('high')).toEqual(true);
   });
 
-  // 1. test that checks for location and years (pass in mockData and check for it)
-
   it('should have location and years', () => {
     const mockData = { location: 'Colorado', districtData: { '2004': 0.605 } };
     const renderedComponent = shallow(<Card {...mockData} />);
@@ -33,7 +31,6 @@ describe('Card', () => {
     expect(renderedComponent.find('h3').length).toEqual(1);
     expect(renderedComponent.find('ul').length).toEqual(1);
   });
-  // 2. test that checks for the conditional rendering that we are going to do with the compare cards
 
   it('should have conditional compare rendering if compared is true', () => {
     const mockData = {
@@ -48,8 +45,6 @@ describe('Card', () => {
     expect(renderedComponent.find('ul').length).toEqual(0);
   });
 
-  // 3. test that checks to see if the class changes when it is selected or whatever we are going to do
-
   it('should have class of compare when true', () => {
     const mockData = {
       location: 'Colorado',
@@ -58,6 +53,8 @@ describe('Card', () => {
     };
     const renderedComponent = shallow(<Card {...mockData} />);
 
-    expect(renderedComponent.find('div.card').hasClass('compare')).toEqual(true);
+    expect(renderedComponent.find('div.card').hasClass('compare')).toEqual(
+      true
+    );
   });
 });
