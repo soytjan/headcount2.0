@@ -26,7 +26,6 @@ class App extends Component {
 
   handleSelect = (location, id, isSelected) => {
     if (isSelected) {
-      console.log('unselecting')
       this.unselectDistrict(location);
     } else {
       this.selectDistrict(location);
