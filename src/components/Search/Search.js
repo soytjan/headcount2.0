@@ -31,7 +31,7 @@ export class Search extends Component {
   render() {
     return (
       <div className="search">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='search-form'>
           <input
             onChange={this.handleInputChange}
             value={this.state.location}

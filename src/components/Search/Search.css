@@ -1,5 +1,25 @@
 .search {
   grid-column: 1/7;
-  background-color: lightblue;
-  height: 100px;
-  margin: 0 2%; }
+  background-color: lightblue; }
+  .search button {
+    background-color: #F7C74A;
+    color: #273B7A;
+    font-family: "Lato", sans-serif;
+    height: 36px;
+    font-size: 1.2em;
+    width: 100px;
+    border-radius: 10px; }
+  .search input {
+    font-family: "Lato", sans-serif;
+    font-size: 1.2em;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    width: 400px;
+    height: 40px;
+    margin: 35px 0 15px; }
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
