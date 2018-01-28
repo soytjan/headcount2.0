@@ -11,8 +11,6 @@ export default class DistrictRepository {
         acc[place] = [];
       }
 
-      // acc[place] ? acc[place].push(element) : acc[place] = [element];
-
       acc[place].push(element);
 
       return acc;

@@ -15,7 +15,7 @@ class App extends Component {
 
     this.state = {
       districtData: this.district.findAllMatches(),
-      comparedCards: []
+      selectedDistricts: []
     };
   }
 
@@ -25,26 +25,35 @@ class App extends Component {
   };
 
   handleSelect = location => {
-    let { comparedCards } = this.state;
+    let { selectedDistricts } = this.state;
     let cards;
-    if (comparedCards.length < 2) {
-      cards = [...comparedCards, this.district.findByName(location)];
+    if (selectedDistricts.length < 2) {
+      cards = [...selectedDistricts, this.district.findByName(location)];
     } else {
-      cards = [...comparedCards.splice(1), this.district.findByName(location)];
+      cards = [...selectedDistricts.splice(2), this.district.findByName(location)];
     }
-    this.setState({ comparedCards: cards });
+
+    this.setState({ selectedDistricts: cards });
   };
+
+  handleComparison = () => {  
+    const location1 = this.state.selectedDistricts[0].location;
+    const location2 = this.state.selectedDistricts[1].location;
+    return this.district.compareDistrictAverages(location1, location2);
+  }
 
   render() {
     return (
       <div className="wrapper">
         <Header />
         <Search handleSearch={this.handleSearch} />
-        <CompareContainer comparedCards={this.state.comparedCards} />
+        <CompareContainer 
+          selectedDistricts={this.state.selectedDistricts}
+          onComparison={this.handleComparison} />
         <CardContainer
           districtData={this.state.districtData}
-          select={this.handleSelect}
-          compare={this.state.comparedCards}
+          onSelect={this.handleSelect}
+          selectedDistricts={this.state.selectedDistricts}
         />
         <Footer />
       </div>
