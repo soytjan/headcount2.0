@@ -20,6 +20,7 @@ export class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.props.handleSearch(this.state.location.toUpperCase());
   };
 
   render() {
