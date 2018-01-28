@@ -2,11 +2,21 @@
 
 .header {
   grid-column: 1/7;
-  background-color: brown;
+  background-color: $header-bg-color;
   height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
   h1 {
     font-family: $header-font;
+    color: $header-font-color;
+    font-size: 2em;
+  }
+
+  .icon {
+    height: 75px;
+    padding-right: 15px;
   }
 }
 

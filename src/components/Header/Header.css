@@ -1,6 +1,14 @@
 .header {
   grid-column: 1/7;
-  background-color: brown;
-  height: 100px; }
+  background-color: #273B7A;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
   .header h1 {
-    font-family: "Slabo 27px", serif; }
+    font-family: "Slabo 27px", serif;
+    color: #E0A449;
+    font-size: 2em; }
+  .header .icon {
+    height: 75px;
+    padding-right: 15px; }
