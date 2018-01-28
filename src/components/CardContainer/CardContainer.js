@@ -3,13 +3,13 @@ import Card from '../Card/Card.js';
 import './CardContainer.css';
 import React from 'react';
 
-const CardContainer = ({ districtData, select, compare }) => {
+const CardContainer = ({ districtData, onSelect, selectedDistricts }) => {
   const cards = districtData.map((districtObject, index) => {
-    districtObject.selected = 'not-selected';
+    districtObject.isSelected = false;
 
-    compare.forEach(compareObject => {
+    selectedDistricts.forEach(compareObject => {
       if (compareObject.location === districtObject.location) {
-        districtObject.selected = 'selected';
+        districtObject.isSelected = true;
       }
     });
     return (
@@ -17,7 +17,7 @@ const CardContainer = ({ districtData, select, compare }) => {
         {...districtObject}
         id={`card-${index}${Date.now()}`}
         key={`card-${index}${Date.now()}`}
-        select={select}
+        onSelect={onSelect}
       />
     );
   });
@@ -28,7 +28,7 @@ const CardContainer = ({ districtData, select, compare }) => {
 CardContainer.propTypes = {
   districtData: PropTypes.array,
   select: PropTypes.func,
-  compare: PropTypes.array
+  selectedDistricts: PropTypes.array
 };
 
 export default CardContainer;

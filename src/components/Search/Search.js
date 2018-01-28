@@ -11,8 +11,6 @@ export class Search extends Component {
     };
   }
 
-  // shouldComponentUpdate() ??
-
   handleInputChange = event => {
     const { value } = event.target;
 
@@ -22,7 +20,13 @@ export class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.props.handleSearch(this.state.location.toUpperCase());
   };
+
+  handleClick = () => {
+    this.setState({ location: '' });
+    this.props.handleSearch();
+  }
 
   render() {
     return (
@@ -34,7 +38,7 @@ export class Search extends Component {
             type="text"
             placeholder="Search"
           />
-          <button onClick={() => this.props.handleSearch()}>Show All</button>
+          <button onClick={this.handleClick}>Show All</button>
         </form>
       </div>
     );

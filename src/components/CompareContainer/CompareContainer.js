@@ -3,10 +3,23 @@ import './CompareContainer.css';
 import Card from '../Card/Card';
 import PropTypes from 'prop-types';
 
-const CompareContainer = ({comparedCards}) => {
-  const selectedCards = comparedCards.map((card, index) => (
-    <Card {...card} key={`card-${index}${Date.now()}`} selected='selected' />
+const CompareContainer = ({selectedDistricts, onComparison, onSelect}) => {
+  let districtArray = selectedDistricts;
+
+  if (selectedDistricts.length > 1) {
+    const comparisonCard = onComparison(selectedDistricts[0].location, selectedDistricts[1].location);
+    districtArray.splice(1, 0, comparisonCard);
+  }
+
+  const selectedCards = districtArray.map((card, index) => (
+    <Card {...card} 
+      key={`card-${index}${Date.now()}`} 
+      id={`card-${index}${Date.now()}`} 
+      isSelected={true} 
+      onSelect={onSelect} 
+    />
   ));
+
   return (
     <div className="compare-container">
       {selectedCards}
@@ -15,7 +28,7 @@ const CompareContainer = ({comparedCards}) => {
 };
 
 CompareContainer.propTypes = {
-  comparedCards: PropTypes.array
+  selectedDistricts: PropTypes.array
 };
 
 export default CompareContainer;
