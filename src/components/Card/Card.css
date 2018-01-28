@@ -1,11 +1,14 @@
 .card {
-  border: 1px solid black;
+  border: none;
   border-radius: 25px;
   text-align: center;
-  padding: 20px 0px; }
+  padding: 20px 0px;
+  background-color: white;
+  box-shadow: 1px 2px 4px #868686; }
 
 h3 {
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  color: #D48B07; }
 
 ul {
   margin-top: 10px; }
@@ -13,8 +16,11 @@ ul {
 li {
   list-style: none; }
 
+.low {
+  color: #ED6033; }
+
 .high {
-  color: magenta; }
+  color: #273B7A; }
 
 .selected {
-  background-color: grey; }
+  background-color: #DEDEDE; }
