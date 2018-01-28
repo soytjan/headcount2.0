@@ -36,9 +36,9 @@ export class Search extends Component {
             onChange={this.handleInputChange}
             value={this.state.location}
             type="text"
-            placeholder="Search"
+            placeholder="Search districts"
           />
-          <button onClick={this.handleClick}>Show All</button>
+          <button onClick={this.handleClick}>Show All Districts</button>
         </form>
       </div>
     );
