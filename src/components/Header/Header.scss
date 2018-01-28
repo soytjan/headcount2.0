@@ -1,5 +1,12 @@
+@import '../../variables.scss';
+
 .header {
   grid-column: 1/7;
   background-color: brown;
   height: 100px;
+  
+  h1 {
+    font-family: $header-font;
+  }
 }
+

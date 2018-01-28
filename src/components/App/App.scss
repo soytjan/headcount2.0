@@ -1,5 +1,10 @@
+@import '../../variables.scss';
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 10px;
+  background-color: $main-bg-color;
+  font-family: $main-font;
+  font-weight: 400;
 }

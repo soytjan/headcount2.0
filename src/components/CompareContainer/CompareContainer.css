@@ -3,7 +3,6 @@
   margin: 0 2%;
   display: flex;
   justify-content: center; }
-
-.compare-container .card {
-  width: 200px;
-  margin: 10px; }
+  .compare-container .card {
+    width: 200px;
+    margin: 10px; }

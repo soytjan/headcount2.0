@@ -1,11 +1,14 @@
+@import '../../variables.scss';
+
 .compare-container {
   grid-column: 1/7;
   margin: 0 2%;
   display: flex;
   justify-content: center;
-}
 
-.compare-container .card {
+  .card {
   width: 200px;
   margin: 10px;
+  }
 }
+
