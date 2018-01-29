@@ -6,8 +6,8 @@ import rightArrow from './right-arrow-circular-button.svg';
 
 const Card = props => {
   let renderedCard;
-  const { isSelected, onSelect } = props;
-  const klass = isSelected ? 'card selected' : 'card';
+  let klass = isSelected ? 'card selected' : 'card';
+  const {isSelected, onSelect} = props;
 
   if (!props.compared) {
     const { location, districtData, id } = props;
@@ -19,32 +19,31 @@ const Card = props => {
         </li>
       );
     });
-
-    renderedCard = (
-      <div
-        id={id}
-        className={klass}
-        onClick={() => {
-          onSelect(location, id, isSelected);
-        }}
-      >
-        <h3>{location}</h3>
-        <ul>{years}</ul>
-      </div>
-    );
+    
+    renderedCard = 
+      (
+        <div className='card-data'>
+          <h3>{location}</h3>
+          <ul>{years}</ul>
+        </div>
+      )
   } else {
     const districtNames = Object.keys(props);
+    klass = 'card middle';
 
     renderedCard = (
-      <div className="card compare">
-        <div>
+      <div className='compare'>
+        <div>  
           <h3>{districtNames[1]}</h3>
           <h4>{props[districtNames[1]]}</h4>
         </div>
-        <div className="districts-avg">
-          <img src={leftArrow} alt="left arrow" className="arrow" />
-          <h4>{props.compared}</h4>
-          <img src={rightArrow} alt="right arrow" className="arrow" />
+        <div>
+          <h3 className='compare-header'>District Comparison</h3>  
+          <div className='districts-avg'>
+            <img src={leftArrow} alt='left arrow' class='arrow' /> 
+            <h4>{props.compared}</h4> 
+            <img src={rightArrow} alt='right arrow' class='arrow' /> 
+          </div>
         </div>
         <div>
           <h3>{districtNames[2]}</h3>
@@ -54,7 +53,12 @@ const Card = props => {
     );
   }
 
-  return <div>{renderedCard}</div>;
+  return (
+    <div id={props.id} className={klass} onClick={() => {onSelect(props.location, props.id, props.isSelected)}}>
+    {renderedCard}
+    </div>
+  );
+
 };
 
 Card.propTypes = {
