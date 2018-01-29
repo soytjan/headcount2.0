@@ -12,7 +12,7 @@
     border-radius: 10px;
     padding: 0 12px;
     border: none;
-    margin-bottom: 25px; }
+    margin-bottom: 15px; }
     .search button:hover {
       background-color: #CBA33D; }
   .search input {
@@ -23,4 +23,4 @@
     border: 1.5px solid #F7C74A;
     width: 400px;
     height: 40px;
-    margin: 30px 0 15px; }
+    margin: 40px 0 15px; }
