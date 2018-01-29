@@ -156,8 +156,17 @@ describe('App', () => {
   });
 
   it('should remove card from selectedDistricts array', () => {
-    //test unselectDistrict function
-    // same thing as above just check that it is removed
+    const renderedComponent = mount(<App />);
+    renderedComponent
+      .find('input')
+      .simulate('change', { target: { value: 'ACADEMY 20' } });
+
+    expect(renderedComponent.state().selectedDistricts).toEqual([]);
+
+    renderedComponent.find('div.card').simulate('dblclick');
+
+    expect(renderedComponent.state().selectedDistricts).toEqual([]);
+    expect(renderedComponent.state().selectedDistricts.length).toEqual(0);
   });
 
   it('should add compare district to selectedDistricts array', () => {
