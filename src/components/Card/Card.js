@@ -16,7 +16,7 @@ const Card = props => {
       return (
         <li className={style}  key={`year-${index}`}>
   
-          <span className='year'>{year}:</span> {districtData[year]}
+          {year}: {districtData[year]}
         </li>
       );
     });
