@@ -34,4 +34,17 @@ li {
 .compare {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  text-align: center; }
+  .compare h3 {
+    height: auto; }
+  .compare h4 {
+    font-weight: 400; }
+  .compare .districts-avg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px; }
+  .compare .arrow {
+    height: 34px; }

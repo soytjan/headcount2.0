@@ -44,4 +44,25 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
+
+  h3 {
+    height: auto;
+  }
+
+  h4 {
+    font-weight: 400;
+  }
+
+  .districts-avg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .arrow {
+    height: 34px;
+  }
 }
