@@ -62,7 +62,8 @@ Card.propTypes = {
   districtData: PropTypes.object,
   onSelect: PropTypes.func,
   id: PropTypes.string,
-  isSelected: PropTypes.bool
+  isSelected: PropTypes.bool,
+  compared: PropTypes.bool
 };
 
 export default Card;
