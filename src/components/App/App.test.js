@@ -148,6 +148,21 @@ describe('App', () => {
 
     expect(renderedComponent.state().selectedDistricts).toEqual(result);
     expect(renderedComponent.state().selectedDistricts.length).toEqual(3);
+    //test the function handleDistrictSelect
+    //mount
+    //find card 
+    // simulate click on the card
+    //check that the card is in the array
+  });
+
+  it('should remove card from selectedDistricts array', () => {
+    //test unselectDistrict function
+    // same thing as above just check that it is removed
+  });
+
+  it('should add compare district to selectedDistricts array', () => {
+    //Test that the compare object gets added to the array
+    //search to narrow down cards
   });
 
   it('should update selectedDistricts array in state so that comparison object is in the 1 index', () => {

@@ -9,13 +9,12 @@ describe('CardContainer', () => {
     const district = new DistrictRepository(kinderData);
     const mockData = district.findAllMatches();
     const selectMockData = [{}, {}, {}];
-    Date.now = jest.fn(() => 1482363367071)
     const renderedComponent = shallow(
       <CardContainer
         districtData={mockData}
         selectedDistricts={selectMockData}
       />);
-
+      
     expect(renderedComponent).toMatchSnapshot();
   });
 
@@ -44,6 +43,8 @@ describe('CardContainer', () => {
       />
     );
 
-    expect(renderedComponent.find('div').hasClass('card-container')).toEqual(true);
+    expect(renderedComponent.find('div').hasClass('card-container')).toEqual(
+      true
+    );
   });
 });
