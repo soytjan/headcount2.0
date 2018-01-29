@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import './Card.css';
+import leftArrow from './back-arrow-circular-symbol.svg';
+import rightArrow from './right-arrow-circular-button.svg';
 
 const Card = (props) => {
   let renderedCard;
@@ -28,12 +30,22 @@ const Card = (props) => {
       )
   } else {
     const districtNames = Object.keys(props);
-
+   
     renderedCard = (
       <div className='card compare'>
-      <h3>{districtNames[1]}</h3>
-      <h4>-- {props.compared} --</h4>
-      <h3>{districtNames[2]}</h3>
+        <div>  
+          <h3>{districtNames[1]}</h3>
+          <h4>{props[districtNames[1]]}</h4>
+        </div>  
+        <div className='districts-avg'>
+          <img src={leftArrow} alt='left arrow' class='arrow' /> 
+          <h4>{props.compared}</h4> 
+          <img src={rightArrow} alt='right arrow' class='arrow' /> 
+        </div>
+        <div>
+          <h3>{districtNames[2]}</h3>
+          <h4>{props[districtNames[2]]}</h4>
+        </div>
       </div>
     )
   }
