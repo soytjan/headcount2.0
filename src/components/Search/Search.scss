@@ -1,14 +1,14 @@
 @import '../../variables.scss';
 
 .search {
-  grid-column: 1/7;
+  grid-column: 1/9;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   button {
     background-color: $button-color;
-    color: $card-high-color;
+    color: $button-font-color;
     font-family: $main-font;
     height: 40px;
     font-size: 1.2em;
@@ -29,7 +29,7 @@
     font-size: 1.2em;
     padding: 0 10px;
     border-radius: 10px;
-    border: none;
+    border: 1.5px solid $search-border-color;
     width: 400px;
     height: 40px;
     margin: 25px 0 15px;

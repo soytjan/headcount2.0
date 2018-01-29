@@ -15,8 +15,8 @@ const Card = (props) => {
       const style = districtData[year] >= 0.5 ? 'high' : 'low';
       return (
         <li className={style}  key={`year-${index}`}>
-          {' '}
-          {year}: {districtData[year]}
+  
+          <span className='year'>{year}:</span> {districtData[year]}
         </li>
       );
     });

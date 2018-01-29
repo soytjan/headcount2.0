@@ -1,8 +1,8 @@
 @import '../../variables.scss';
 
 .card-container {
-  grid-column: 1/7;
+  grid-column: 2/8;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px;
+  grid-gap: 15px;
 }
