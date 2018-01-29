@@ -59,13 +59,7 @@ const Card = props => {
   }
 
   return (
-    <div
-      id={props.id}
-      className={klass}
-      onClick={() => {
-        onSelect(props.location, props.id, props.isSelected);
-      }}
-    >
+    <div>
       {renderedCard}
     </div>
   );
