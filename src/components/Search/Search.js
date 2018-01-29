@@ -31,15 +31,15 @@ export class Search extends Component {
   render() {
     return (
       <div className="search">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className='search-form'>
           <input
             onChange={this.handleInputChange}
             value={this.state.location}
             type="text"
-            placeholder="Search"
+            placeholder="Search districts"
           />
-          <button onClick={this.handleClick}>Show All</button>
         </form>
+        <button onClick={this.handleClick}>Show All Districts</button>
       </div>
     );
   }
