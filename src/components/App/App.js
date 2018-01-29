@@ -24,7 +24,7 @@ class App extends Component {
     this.setState({ districtData });
   };
 
-  handleDistrictSelect = (location, id, isSelected) => {
+  handleDistrictSelect = (location, isSelected) => {
     if (isSelected) {
       this.unselectDistrict(location);
     } else {
