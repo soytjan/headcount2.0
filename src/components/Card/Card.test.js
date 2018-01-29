@@ -41,7 +41,7 @@ describe('Card', () => {
     const renderedComponent = shallow(<Card {...mockData} />);
 
     expect(renderedComponent.find('h3').length).toEqual(2);
-    expect(renderedComponent.find('h4').length).toEqual(1);
+    expect(renderedComponent.find('h4').length).toEqual(3);
     expect(renderedComponent.find('ul').length).toEqual(0);
   });
 
