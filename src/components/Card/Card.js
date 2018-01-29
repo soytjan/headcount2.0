@@ -72,12 +72,12 @@ const Card = props => {
 };
 
 Card.propTypes = {
-  location: PropTypes.string,
+  compared: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
   districtData: PropTypes.object,
-  onSelect: PropTypes.func,
   id: PropTypes.string,
   isSelected: PropTypes.bool,
-  compared: PropTypes.oneOfType([PropTypes.bool, PropTypes.number])
+  location: PropTypes.string,
+  onSelect: PropTypes.func
 };
 
 export default Card;

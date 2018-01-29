@@ -28,9 +28,9 @@ const CompareContainer = ({ selectedDistricts, onComparison, onSelect }) => {
 };
 
 CompareContainer.propTypes = {
-  selectedDistricts: PropTypes.array,
   onComparison: PropTypes.func,
-  onSelect: PropTypes.func
+  onSelect: PropTypes.func,
+  selectedDistricts: PropTypes.array
 };
 
 export default CompareContainer;
