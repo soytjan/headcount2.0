@@ -26,6 +26,23 @@ describe('CardContainer', () => {
     const district = new DistrictRepository(kinderData);
     const mockData = district.findAllMatches();
     const selectMockData = [{}, {}, {}];
+    /* eslint-disable */
+    Date.now = jest.fn(() => 1482363367071);
+    /* eslint-enable */
+    const renderedComponent = shallow(
+      <CardContainer
+        districtData={mockData}
+        selectedDistricts={selectMockData}
+      />
+    );
+
+    expect(renderedComponent).toMatchSnapshot();
+  });
+
+  it('should render cards for data passed in', () => {
+    const district = new DistrictRepository(kinderData);
+    const mockData = district.findAllMatches();
+    const selectMockData = [{}, {}, {}];
     const renderedComponent = shallow(
       <CardContainer
         districtData={mockData}
