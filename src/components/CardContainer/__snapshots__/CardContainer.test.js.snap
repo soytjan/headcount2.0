@@ -42235,6 +42235,7 @@ ShallowWrapper {
   },
 }
 `;
+<<<<<<< HEAD
 
 exports[`CardContainer should render cards for data passed in 1`] = `
 ShallowWrapper {
@@ -62753,3 +62754,5 @@ ShallowWrapper {
   },
 }
 `;
+=======
+>>>>>>> merge conflict git rebase issues after pull from master
