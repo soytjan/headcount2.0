@@ -53,3 +53,7 @@ li {
     padding: 0 10px; }
   .compare .arrow {
     height: 34px; }
+
+@media screen and (max-width: 357px) {
+  .card h3 {
+    height: auto; } }
