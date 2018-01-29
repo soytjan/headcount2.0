@@ -33,11 +33,15 @@ describe('Card', () => {
   });
 
   it('should have conditional compare rendering if compared is true', () => {
+<<<<<<< HEAD
     const mockData = {
       'COLORADO': 0.53,
       'COLORADO SPRINGS 11': 0.833,
       'compared': 0.636
     };
+=======
+    const mockData = { 'ACADEMY 20': 0.407, compared: 1 };
+>>>>>>> Eslinted
     const renderedComponent = shallow(<Card {...mockData} />);
 
     expect(renderedComponent.find('div.compare').length).toEqual(1);

@@ -102,7 +102,7 @@ describe('App', () => {
     expect(renderedComponent.state().selectedDistricts.length).toEqual(0);
   });
 
-  it('should add compare object to selectedDistricts array when two cards are clicked', () => {
+  it('should add compare object to array when two cards are clicked', () => {
     const renderedComponent = mount(<App />);
     const result = [
       {
