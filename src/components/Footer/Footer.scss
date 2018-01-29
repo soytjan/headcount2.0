@@ -1,7 +1,13 @@
 @import '../../variables.scss';
 
 .footer {
-  grid-column: 1/7;
-  background-color: salmon;
-  height: 100px;
+  grid-column: 1/9;
+  background-color: $header-bg-color;
+  color: $header-font-color;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $header-font;
+  font-size: 20px;
 }
