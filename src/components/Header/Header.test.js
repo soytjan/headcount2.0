@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 describe('Header', () => {
   let renderedComponent;
@@ -16,7 +16,7 @@ describe('Header', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it.skip('should match the snapshot', () => {
+  it('should match the snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 });
