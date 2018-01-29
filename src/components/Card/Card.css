@@ -5,6 +5,9 @@
   background-color: white;
   box-shadow: 2px 2px 4px #868686;
   min-height: 352px; }
+  .card:hover {
+    cursor: pointer;
+    background-color: #F5F5F6; }
   .card h3 {
     font-size: 1.2em;
     color: #5BB3C3;
