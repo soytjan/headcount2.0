@@ -57,6 +57,17 @@ describe('App', () => {
   });
 
   it('should add card to selectedDistricts array', () => {
+    const renderedComponent = mount(<App />);
+    renderedComponent
+      .find('input')
+      .simulate('change', { target: { value: 'ACADEMY 20' } });
+
+    expect(renderedComponent.state().selectedDistricts).toEqual([]);
+
+    renderedComponent.find('div.card').simulate('click');
+
+    expect(renderedComponent.state().selectedDistricts).toEqual([{}]);
+    expect(renderedComponent.find('div.card').length).toEqual(1);
     //test the function handleDistrictSelect
     //mount
     //find card 

@@ -14,8 +14,7 @@ const Card = props => {
     const years = Object.keys(districtData).map((year, index) => {
       const style = districtData[year] >= 0.5 ? 'high' : 'low';
       return (
-        <li className={style}  key={`year-${index}`}>
-  
+        <li className={style} key={`year-${index}`}>
           {year}: {districtData[year]}
         </li>
       );
@@ -63,8 +62,7 @@ Card.propTypes = {
   districtData: PropTypes.object,
   onSelect: PropTypes.func,
   id: PropTypes.string,
-  isSelected: PropTypes.bool,
-  compared: PropTypes.bool
+  isSelected: PropTypes.bool
 };
 
 export default Card;

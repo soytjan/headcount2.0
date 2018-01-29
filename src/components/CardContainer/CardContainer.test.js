@@ -5,7 +5,20 @@ import DistrictRepository from '../../helper.js';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 
 describe('CardContainer', () => {
-  it('should match the snapshot', () => {
+  // it('should match the snapshot', () => {
+  //   const district = new DistrictRepository(kinderData);
+  //   const mockData = district.findAllMatches();
+  //   const selectMockData = [{}, {}, {}];
+  //   const renderedComponent = shallow(
+  //     <CardContainer
+  //       districtData={mockData}
+  //       selectedDistricts={selectMockData}
+  //     />);
+
+  //   expect(renderedComponent).toMatchSnapshot();
+  // });
+
+  it('should render cards for data passed in', () => {
     const district = new DistrictRepository(kinderData);
     const mockData = district.findAllMatches();
     const selectMockData = [{}, {}, {}];
@@ -13,16 +26,7 @@ describe('CardContainer', () => {
       <CardContainer
         districtData={mockData}
         selectedDistricts={selectMockData}
-      />);
-      
-    expect(renderedComponent).toMatchSnapshot();
-  });
-
-  it.skip('should render cards for data passed in', () => {
-    const district = new DistrictRepository(kinderData);
-    const mockData = district.findAllMatches();
-    const renderedComponent = shallow(
-      <CardContainer districtData={mockData} />
+      />
     );
 
     expect(renderedComponent.find('Card').length).toEqual(181);
