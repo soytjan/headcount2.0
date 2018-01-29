@@ -7,17 +7,10 @@ import rightArrow from './right-arrow-circular-button.svg';
 const Card = props => {
   let renderedCard;
   const { isSelected, onSelect } = props;
-<<<<<<< HEAD
   let klass = isSelected ? 'card selected' : 'card';
 
   if (!props.compared) {
     const { location, districtData } = props;
-=======
-  const klass = isSelected ? 'card selected' : 'card';
-
-  if (!props.compared) {
-    const { location, districtData, id } = props;
->>>>>>> psuedo coded the app.tests.js
     const years = Object.keys(districtData).map((year, index) => {
       const style = districtData[year] >= 0.5 ? 'high' : 'low';
       return (
@@ -41,21 +34,14 @@ const Card = props => {
     );
   } else {
     const districtNames = Object.keys(props);
-<<<<<<< HEAD
     klass = 'card middle';
 
     renderedCard = (
       <div className="compare">
-=======
-
-    renderedCard = (
-      <div className="card compare">
->>>>>>> psuedo coded the app.tests.js
         <div>
           <h3>{districtNames[1]}</h3>
           <h4>{props[districtNames[1]]}</h4>
         </div>
-<<<<<<< HEAD
         <div>
           <h3 className="compare-header">District Comparison</h3>
           <div className="districts-avg">
@@ -63,12 +49,6 @@ const Card = props => {
             <h4>{props.compared}</h4>
             <img src={rightArrow} alt="right arrow" className="arrow" />
           </div>
-=======
-        <div className="districts-avg">
-          <img src={leftArrow} alt="left arrow" className="arrow" />
-          <h4>{props.compared}</h4>
-          <img src={rightArrow} alt="right arrow" className="arrow" />
->>>>>>> psuedo coded the app.tests.js
         </div>
         <div>
           <h3>{districtNames[2]}</h3>
@@ -78,7 +58,6 @@ const Card = props => {
     );
   }
 
-<<<<<<< HEAD
   return (
     <div
       id={props.id}
@@ -90,9 +69,6 @@ const Card = props => {
       {renderedCard}
     </div>
   );
-=======
-  return <div>{renderedCard}</div>;
->>>>>>> psuedo coded the app.tests.js
 };
 
 Card.propTypes = {
@@ -101,11 +77,7 @@ Card.propTypes = {
   onSelect: PropTypes.func,
   id: PropTypes.string,
   isSelected: PropTypes.bool,
-<<<<<<< HEAD
-  compared: PropTypes.oneOfType([PropTypes.bool, PropTypes.number])
-=======
-  compared: PropTypes.bool
->>>>>>> psuedo coded the app.tests.js
+
 };
 
 export default Card;
