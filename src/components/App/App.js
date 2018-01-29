@@ -29,11 +29,13 @@ class App extends Component {
       this.unselectDistrict(location);
     } else {
       this.selectDistrict(location);
-    }  
+    }
   };
 
   unselectDistrict = location => {
-    const selectedDistricts = this.state.selectedDistricts.filter(district => location !== district.location && district.districtData);
+    const selectedDistricts = this.state.selectedDistricts.filter(
+      district => location !== district.location && district.districtData
+    );
 
     this.setState({ selectedDistricts });
   };
@@ -45,13 +47,16 @@ class App extends Component {
     if (selectedDistricts.length < 2) {
       cards = [...selectedDistricts, this.district.findByName(location)];
     } else {
-      cards = [...selectedDistricts.splice(2), this.district.findByName(location)];
+      cards = [
+        ...selectedDistricts.splice(2),
+        this.district.findByName(location)
+      ];
     }
 
     this.setState({ selectedDistricts: cards });
   };
 
-  handleDistrictComparison = () => {  
+  handleDistrictComparison = () => {
     const location1 = this.state.selectedDistricts[0].location;
     const location2 = this.state.selectedDistricts[1].location;
     return this.district.compareDistrictAverages(location1, location2);
@@ -62,7 +67,7 @@ class App extends Component {
       <div className="wrapper">
         <Header />
         <Search handleDistrictSearch={this.handleDistrictSearch} />
-        <CompareContainer 
+        <CompareContainer
           selectedDistricts={this.state.selectedDistricts}
           onSelect={this.handleDistrictSelect}
           onComparison={this.handleDistrictComparison}
