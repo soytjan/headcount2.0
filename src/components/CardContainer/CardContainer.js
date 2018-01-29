@@ -29,7 +29,8 @@ CardContainer.propTypes = {
   districtData: PropTypes.array,
   onSelect: PropTypes.func,
   select: PropTypes.func,
-  selectedDistricts: PropTypes.array
+  selectedDistricts: PropTypes.array,
+  onSelect: PropTypes.func
 };
 
 export default CardContainer;

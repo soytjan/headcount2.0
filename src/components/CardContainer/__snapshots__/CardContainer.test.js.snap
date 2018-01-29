@@ -3128,6 +3128,7 @@ ShallowWrapper {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           id="card-01482363367071"
 =======
           id="card-01517196162942"
@@ -45360,6 +45361,8 @@ ShallowWrapper {
                               "2014": 0.741,
                             }
           }
+=======
+>>>>>>> 04530884e2da30064a694bd7154245e1fe4d2ff0
           id="card-01482363367071"
           isSelected={false}
           location="COLORADO"
@@ -62732,7 +62735,10 @@ ShallowWrapper {
               "2014": 1,
             },
             "id": "card-1801482363367071",
+<<<<<<< HEAD
 >>>>>>> adjusted PropTypes and added the missing ones
+=======
+>>>>>>> 04530884e2da30064a694bd7154245e1fe4d2ff0
             "isSelected": false,
             "location": "YUMA SCHOOL DISTRICT 1",
             "onSelect": undefined,
@@ -62754,5 +62760,8 @@ ShallowWrapper {
   },
 }
 `;
+<<<<<<< HEAD
 =======
 >>>>>>> merge conflict git rebase issues after pull from master
+=======
+>>>>>>> 04530884e2da30064a694bd7154245e1fe4d2ff0

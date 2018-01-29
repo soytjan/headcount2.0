@@ -7,10 +7,10 @@ import rightArrow from './right-arrow-circular-button.svg';
 const Card = props => {
   let renderedCard;
   const { isSelected, onSelect } = props;
-  let klass = isSelected ? 'card selected' : 'card';
+  const klass = isSelected ? 'card selected' : 'card';
 
   if (!props.compared) {
-    const { location, districtData } = props;
+    const { location, districtData, id } = props;
     const years = Object.keys(districtData).map((year, index) => {
       const style = districtData[year] >= 0.5 ? 'high' : 'low';
       return (
@@ -34,21 +34,17 @@ const Card = props => {
     );
   } else {
     const districtNames = Object.keys(props);
-    klass = 'card middle';
 
     renderedCard = (
-      <div className="compare">
+      <div className="card compare">
         <div>
           <h3>{districtNames[1]}</h3>
           <h4>{props[districtNames[1]]}</h4>
         </div>
-        <div>
-          <h3 className="compare-header">District Comparison</h3>
-          <div className="districts-avg">
-            <img src={leftArrow} alt="left arrow" className="arrow" />
-            <h4>{props.compared}</h4>
-            <img src={rightArrow} alt="right arrow" className="arrow" />
-          </div>
+        <div className="districts-avg">
+          <img src={leftArrow} alt="left arrow" className="arrow" />
+          <h4>{props.compared}</h4>
+          <img src={rightArrow} alt="right arrow" className="arrow" />
         </div>
         <div>
           <h3>{districtNames[2]}</h3>
@@ -58,11 +54,7 @@ const Card = props => {
     );
   }
 
-  return (
-    <div>
-      {renderedCard}
-    </div>
-  );
+  return <div>{renderedCard}</div>;
 };
 
 Card.propTypes = {
@@ -70,8 +62,7 @@ Card.propTypes = {
   districtData: PropTypes.object,
   id: PropTypes.string,
   isSelected: PropTypes.bool,
-  location: PropTypes.string,
-  onSelect: PropTypes.func
+  compared: PropTypes.oneOfType([PropTypes.bool, PropTypes.number])
 };
 
 export default Card;
