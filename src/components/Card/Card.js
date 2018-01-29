@@ -6,8 +6,8 @@ import rightArrow from './right-arrow-circular-button.svg';
 
 const Card = props => {
   let renderedCard;
-  let klass = isSelected ? 'card selected' : 'card';
   const {isSelected, onSelect} = props;
+  let klass = isSelected ? 'card selected' : 'card';
 
   if (!props.compared) {
     const { location, districtData, id } = props;
