@@ -7,16 +7,22 @@ describe('CompareContainer', () => {
   let renderedComponent;
 
   beforeEach(() => {
-    renderedComponent = shallow(<CompareContainer />);
+    renderedComponent = shallow(<CompareContainer selectedDistricts={[]} />);
   });
 
-  it.skip('should render without crashing', () => {
+  it('should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<CompareContainer />, div);
+    ReactDOM.render(<CompareContainer selectedDistricts={[]} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it.skip('should match the snapshot', () => {
+  it('should match the snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
+  });
+
+  it('should have class of compare-container', () => {
+    expect(renderedComponent.find('div').hasClass('compare-container')).toEqual(
+      true
+    );
   });
 });

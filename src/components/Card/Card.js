@@ -64,7 +64,7 @@ Card.propTypes = {
   onSelect: PropTypes.func,
   id: PropTypes.string,
   isSelected: PropTypes.bool,
-  compared: PropTypes.bool
+  compared: PropTypes.oneOfType([PropTypes.bool, PropTypes.number])
 };
 
 export default Card;
