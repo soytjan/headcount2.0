@@ -24,3 +24,9 @@
     width: 400px;
     height: 40px;
     margin: 40px 0 15px; }
+
+@media screen and (max-width: 550px) {
+  .search input {
+    width: 100%; }
+  .search-form {
+    width: 85%; } }

@@ -4,9 +4,6 @@
   padding: 20px 10px;
   background-color: white;
   box-shadow: 2px 2px 4px #868686;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   min-height: 352px; }
   .card h3 {
     font-size: 1.2em;
@@ -17,6 +14,31 @@
   .card li {
     list-style: none;
     margin: 8px 0; }
+  .card .card-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .card .compare {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 50px 10px;
+    height: 100%;
+    width: 100%; }
+    .card .compare h3 {
+      height: auto;
+      margin-bottom: 5px; }
+    .card .compare h4 {
+      font-weight: 400; }
+    .card .compare .districts-avg {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 10px; }
+    .card .compare .arrow {
+      height: 34px; }
 
 ul {
   margin-top: 10px; }
@@ -34,22 +56,19 @@ li {
 .selected {
   background-color: #DDDDDE; }
 
-.compare {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  padding: 60px 10px; }
-  .compare h3 {
-    height: auto;
-    margin-bottom: 5px; }
-  .compare h4 {
-    font-weight: 400; }
-  .compare .districts-avg {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 10px; }
-  .compare .arrow {
-    height: 34px; }
+.compare-header {
+  margin-bottom: 10px; }
+
+@media screen and (max-width: 850px) {
+  .card .compare {
+    height: 290px; }
+    .card .compare .arrow {
+      display: none; }
+    .card .compare .districts-avg {
+      justify-content: center; }
+  .compare-header {
+    margin-bottom: 0; } }
+
+@media screen and (max-width: 958px) {
+  .card h3 {
+    height: auto; } }
