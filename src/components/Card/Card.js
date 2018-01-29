@@ -40,9 +40,9 @@ const Card = props => {
         <div>
           <h3 className='compare-header'>District Comparison</h3>  
           <div className='districts-avg'>
-            <img src={leftArrow} alt='left arrow' class='arrow' /> 
+            <img src={leftArrow} alt='left arrow' className='arrow' /> 
             <h4>{props.compared}</h4> 
-            <img src={rightArrow} alt='right arrow' class='arrow' /> 
+            <img src={rightArrow} alt='right arrow' className='arrow' /> 
           </div>
         </div>
         <div>
