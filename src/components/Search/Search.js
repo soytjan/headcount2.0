@@ -24,7 +24,6 @@ export class Search extends Component {
   };
 
   handleClick = () => {
-    console.log('button click')
     this.setState({ location: '' });
     this.props.handleDistrictSearch();
   }

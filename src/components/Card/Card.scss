@@ -3,15 +3,22 @@
 .card {
   border: none;
   border-radius: 25px;
-  text-align: center;
-  padding: 20px 0px;
+  padding: 20px 5px;
   background-color: $card-bg;
   box-shadow: 1px 2px 4px #868686;
-}
-
-h3 {
-  font-size: 1.2em;
-  color: $card-title-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 262px;
+  
+  h3 {
+    font-size: 1.2em;
+    color: $card-title-color;
+    font-weight: 400;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 6px;
+  }
 }
 
 ul {
@@ -31,4 +38,10 @@ li {
 
 .selected {
   background-color: $card-bg-selected;
+}
+
+.compare {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
