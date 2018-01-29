@@ -4,19 +4,10 @@ import CompareContainer from './CompareContainer';
 import { shallow } from 'enzyme';
 
 describe('CompareContainer', () => {
-  let renderedComponent;
+  it('should match the snapshot', () => {
+    const mockSelectedDistricts = [];
+    const renderedComponent = shallow(<CompareContainer selectedDistricts={mockSelectedDistricts} />);
 
-  beforeEach(() => {
-    renderedComponent = shallow(<CompareContainer />);
-  });
-
-  it.skip('should render without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<CompareContainer />, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
-  it.skip('should match the snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 });

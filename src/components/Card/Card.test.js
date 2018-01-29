@@ -32,19 +32,6 @@ describe('Card', () => {
     expect(renderedComponent.find('ul').length).toEqual(1);
   });
 
-  // it('should have conditional compare rendering if compared is true', () => {
-  //   const mockData = {
-  //     location: 'Colorado',
-  //     districtData: { '2004': 0.605 },
-  //     compared: true
-  //   };
-  //   const renderedComponent = shallow(<Card {...mockData} />);
-
-  //   expect(renderedComponent.find('h3').length).toEqual(3);
-  //   expect(renderedComponent.find('h4').length).toEqual(3);
-  //   expect(renderedComponent.find('ul').length).toEqual(0);
-  // });
-
   it('should have conditional compare rendering if compared is true', () => {
     const mockData = {
       'COLORADO': 0.53,
@@ -56,16 +43,4 @@ describe('Card', () => {
     expect(renderedComponent.find('div.compare').length).toEqual(1);
   });
 
-  // it('should have class of compare when true', () => {
-  //   const mockData = {
-  //     location: 'Colorado',
-  //     districtData: { '2004': 0.605 },
-  //     compared: true
-  //   };
-  //   const renderedComponent = shallow(<Card {...mockData} />);
-
-  //   expect(renderedComponent.find('div.card').hasClass('compare')).toEqual(
-  //     true
-  //   );
-  // });
 });
