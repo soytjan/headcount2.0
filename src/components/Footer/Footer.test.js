@@ -16,7 +16,7 @@ describe('Footer', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it.skip('should match the snapshot', () => {
+  it('should match the snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 });

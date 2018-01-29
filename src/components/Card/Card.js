@@ -10,7 +10,7 @@ const Card = props => {
   let klass = isSelected ? 'card selected' : 'card';
 
   if (!props.compared) {
-    const { location, districtData, id } = props;
+    const { location, districtData } = props;
     const years = Object.keys(districtData).map((year, index) => {
       const style = districtData[year] >= 0.5 ? 'high' : 'low';
       return (
