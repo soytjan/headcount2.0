@@ -42,5 +42,4 @@ describe('Card', () => {
 
     expect(renderedComponent.find('div.compare').length).toEqual(1);
   });
-
 });
