@@ -102,12 +102,97 @@ describe('App', () => {
     expect(renderedComponent.state().selectedDistricts.length).toEqual(0);
   });
 
-  it('should add compare district to selectedDistricts array', () => {
-    //Test that the compare object gets added to the array
-    //search to narrow down cards
+  it('should add compare object to selectedDistricts array when two cards are clicked', () => {
+    const renderedComponent = mount(<App />);
+
+    renderedComponent
+      .find('input')
+      .simulate('change', { target: { value: 'ACADEMY 20' } });
+    renderedComponent.find('div.card').prop('onClick')();
+    renderedComponent.find('div.card').simulate('click');
+
+    expect(renderedComponent.state().selectedDistricts).toEqual([
+      {
+        districtData: {
+          '2004': 0.302,
+          '2005': 0.267,
+          '2006': 0.354,
+          '2007': 0.392,
+          '2008': 0.385,
+          '2009': 0.39,
+          '2010': 0.436,
+          '2011': 0.489,
+          '2012': 0.479,
+          '2013': 0.488,
+          '2014': 0.49
+        },
+        location: 'ACADEMY 20'
+      },
+      { 'ACADEMY 20': 0.407, compared: 1 },
+      {
+        districtData: {
+          '2004': 0.302,
+          '2005': 0.267,
+          '2006': 0.354,
+          '2007': 0.392,
+          '2008': 0.385,
+          '2009': 0.39,
+          '2010': 0.436,
+          '2011': 0.489,
+          '2012': 0.479,
+          '2013': 0.488,
+          '2014': 0.49
+        },
+        location: 'ACADEMY 20'
+      }
+    ]);
+    expect(renderedComponent.state().selectedDistricts.length).toEqual(3);
   });
 
   it('should ', () => {
-    //test handleDistrictComparison function
+    const renderedComponent = mount(<App />);
+
+    renderedComponent
+      .find('input')
+      .simulate('change', { target: { value: 'ACADEMY 20' } });
+    renderedComponent.find('div.card').prop('onClick')();
+    renderedComponent.find('div.card').simulate('click');
+
+    expect(renderedComponent.state().selectedDistricts).toEqual([
+      {
+        districtData: {
+          '2004': 0.302,
+          '2005': 0.267,
+          '2006': 0.354,
+          '2007': 0.392,
+          '2008': 0.385,
+          '2009': 0.39,
+          '2010': 0.436,
+          '2011': 0.489,
+          '2012': 0.479,
+          '2013': 0.488,
+          '2014': 0.49
+        },
+        location: 'ACADEMY 20'
+      },
+      { 'ACADEMY 20': 0.407, compared: 1 },
+      {
+        districtData: {
+          '2004': 0.302,
+          '2005': 0.267,
+          '2006': 0.354,
+          '2007': 0.392,
+          '2008': 0.385,
+          '2009': 0.39,
+          '2010': 0.436,
+          '2011': 0.489,
+          '2012': 0.479,
+          '2013': 0.488,
+          '2014': 0.49
+        },
+        location: 'ACADEMY 20'
+      }
+    ]);
+    expect(renderedComponent.state().selectedDistricts[1].compared).toEqual(1);
   });
 });
