@@ -25,9 +25,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <div
-        className="card"
-        id={undefined}
-        onClick={[Function]}
+        className="card-data"
 >
         <h3>
                 Colorado
@@ -42,6 +40,9 @@ ShallowWrapper {
                 </li>
         </ul>
 </div>,
+      "className": "card",
+      "id": undefined,
+      "onClick": [Function],
     },
     "ref": null,
     "rendered": Object {
@@ -63,9 +64,7 @@ ShallowWrapper {
             </li>
 </ul>,
         ],
-        "className": "card",
-        "id": undefined,
-        "onClick": [Function],
+        "className": "card-data",
       },
       "ref": null,
       "rendered": Array [
@@ -132,9 +131,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="card"
-          id={undefined}
-          onClick={[Function]}
+          className="card-data"
 >
           <h3>
                     Colorado
@@ -149,6 +146,9 @@ ShallowWrapper {
                     </li>
           </ul>
 </div>,
+        "className": "card",
+        "id": undefined,
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": Object {
@@ -170,9 +170,7 @@ ShallowWrapper {
               </li>
 </ul>,
           ],
-          "className": "card",
-          "id": undefined,
-          "onClick": [Function],
+          "className": "card-data",
         },
         "ref": null,
         "rendered": Array [
