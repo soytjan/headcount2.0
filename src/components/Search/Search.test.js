@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Search from './Search';
 import { shallow } from 'enzyme';
 
@@ -14,19 +13,15 @@ describe('Search', () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 
-  // probably redundant because of the snapshot
-  it('should have an input and button', () => {
-    expect(renderedComponent.find('input').length).toEqual(1);
-    expect(renderedComponent.find('button').length).toEqual(1);
-  });
-
   it('should start with a default location state of an empty string', () => {
     expect(renderedComponent.state()).toEqual({ location: '' });
   });
 
-  it('should update location state on change and call method passed down from props', () => {
+  it('should update state and call method passed down from props', () => {
     const mockSubmit = jest.fn();
-    const renderedComponent = shallow(<Search handleDistrictSearch={mockSubmit} />);
+    const renderedComponent = shallow(
+      <Search handleDistrictSearch={mockSubmit} />
+    );
 
     renderedComponent
       .find('input')

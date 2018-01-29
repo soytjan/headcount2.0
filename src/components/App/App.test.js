@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
 import { shallow, mount } from 'enzyme';
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
@@ -12,7 +11,7 @@ describe('App', () => {
     renderedComponent = shallow(<App />);
   });
 
-  it.skip('should match the snapshot', () => {
+  it('should match the snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 
@@ -23,7 +22,7 @@ describe('App', () => {
     expect(renderedComponent.state().districtData).toEqual(mockData);
   });
 
-  it('user can search through districts and handleDistrictSearch filters cards displayed on screen', () => {
+  it('user can search districts and filters cards displayed on screen', () => {
     const renderedComponent = mount(<App />);
     const result = [
       {
@@ -51,5 +50,29 @@ describe('App', () => {
 
     expect(renderedComponent.state().districtData).toEqual(result);
     expect(renderedComponent.find('div.card').length).toEqual(1);
+  });
+
+  test('Should start with a empty array for state.selectedDistricts', () => {
+    expect(renderedComponent.state().selectedDistricts).toEqual([]);
+  });
+
+  it('should handle district search taking input', () => {
+    //test the function handleDistrictSearch
+  });
+
+  it('should add card to selectedDistricts array', () => {
+    //test the function handleDistrictSelect
+  });
+
+  it('should remove card from selectedDistricts array', () => {
+    //test unselectDistrict function
+  });
+
+  it('should add compare district to selectedDistricts array', () => {
+    //Test that the compare object gets added to the array
+  });
+
+  it('should ', () => {
+    //test handleDistrictComparison function
   });
 });
