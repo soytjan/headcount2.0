@@ -28,7 +28,8 @@ const CardContainer = ({ districtData, onSelect, selectedDistricts }) => {
 CardContainer.propTypes = {
   districtData: PropTypes.array,
   select: PropTypes.func,
-  selectedDistricts: PropTypes.array
+  selectedDistricts: PropTypes.array,
+  onSelect: PropTypes.func
 };
 
 export default CardContainer;

@@ -1,10 +1,10 @@
 export default class DistrictRepository {
-  constructor(data) {
-    this.data = this.cleanData(data);
+  constructor(districtData) {
+    this.districtData = this.cleanData(districtData);
   }
 
-  cleanData(data) {
-    return data.reduce((acc, element) => {
+  cleanData(districtData) {
+    return districtData.reduce((acc, element) => {
       const place = element.Location.toUpperCase();
 
       if (!acc[place]) {
@@ -17,20 +17,20 @@ export default class DistrictRepository {
     }, {});
   }
 
-  sanitizeData(data) {
-    if (typeof data === 'number') {
-      return Number(data.toFixed(3));
+  sanitizeData(districtData) {
+    if (typeof districtData === 'number') {
+      return Number(districtData.toFixed(3));
     }
 
     return 0;
   }
 
   findByName(location) {
-    if (!location || !this.data[location.toUpperCase()]) {
+    if (!location || !this.districtData[location.toUpperCase()]) {
       return undefined;
     }
 
-    const sanitizedData = this.data[location.toUpperCase()].reduce(
+    const sanitizedData = this.districtData[location.toUpperCase()].reduce(
       (acc, element) => {
         acc[element.TimeFrame] = this.sanitizeData(element.Data);
 
@@ -46,7 +46,7 @@ export default class DistrictRepository {
   }
 
   findAllMatches(location) {
-    return Object.keys(this.data).reduce((acc, district) => {
+    return Object.keys(this.districtData).reduce((acc, district) => {
       if (!location || district.includes(location.toUpperCase())) {
         acc.push(this.findByName(district));
       }
