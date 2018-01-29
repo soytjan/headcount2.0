@@ -18,14 +18,18 @@ describe('Search', () => {
   });
 
   it('should update state and call method passed down from props', () => {
+    /* eslint-disable */
     const mockSubmit = jest.fn();
+    /* eslint-enable */
     const renderedComponent = shallow(
       <Search handleDistrictSearch={mockSubmit} />
     );
 
-    renderedComponent
-      .find('input')
-      .simulate('change', { target: { value: 'a' } });
+    renderedComponent.find('input').simulate('change', {
+      target: {
+        value: 'a'
+      }
+    });
 
     expect(renderedComponent.state().location).toEqual('a');
     expect(mockSubmit.mock.calls.length).toBe(1);
